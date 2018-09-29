@@ -22,7 +22,7 @@ const crypto = require("crypto");
 // Firebase Setup
 const admin = require("firebase-admin");
 
-var serviceAccount = require("./globalnl-members-service-account.json");
+var serviceAccount = require("./globalnl-database-test-service-account.json");
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: `https://${process.env.GCLOUD_PROJECT}.firebaseio.com`
@@ -45,10 +45,10 @@ function linkedInClient() {
   return require("node-linkedin")(
     functions.config().linkedin.client_id,
     functions.config().linkedin.client_secret,
-    `https://members.globalnl.com/login.html`
+    //`https://members.globalnl.com/login.html`
+    //`https://globalnl-members.firebaseapp.com/login.html`
+    `https://memberstest.globalnl.com/login.html`
   );
-  //`https://globalnl-members.firebaseapp.com/login.html`);
-  //`https://memberstest.globalnl.com/login.html`);
 }
 
 /**

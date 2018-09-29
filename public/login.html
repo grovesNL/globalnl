@@ -141,7 +141,8 @@ img{
   } else if(!code) {
     // Start the auth flow.
 	//window.location.href  = 'https://us-central1-' + getFirebaseProjectId() + '.cloudfunctions.net/redirect';
-	window.location.href  = 'https://us-central1-globalnl-members.cloudfunctions.net/redirect';
+  //window.location.href  = 'https://us-central1-globalnl-members.cloudfunctions.net/redirect';
+  window.location.href = 'https://us-central1-globalnl-database-test.cloudfunctions.net/redirect';
 	//window.location.href  = 'https://members.globalnl.com/redirect';
   } else {
     // Use JSONP to load the 'token' Firebase Function to exchange the auth code against a Firebase custom token.
@@ -149,8 +150,9 @@ img{
     script.type = 'text/javascript';
     // This is the URL to the HTTP triggered 'token' Firebase Function.
     // See https://firebase.google.com/docs/functions.
-	//var tokenFunctionURL = 'https://us-central1-' + getFirebaseProjectId() + '.cloudfunctions.net/token';
-	var tokenFunctionURL = 'https://us-central1-globalnl-members.cloudfunctions.net/token';
+	  //var tokenFunctionURL = 'https://us-central1-' + getFirebaseProjectId() + '.cloudfunctions.net/token';
+    //var tokenFunctionURL = 'https://us-central1-globalnl-members.cloudfunctions.net/token';
+    var tokenFunctionURL = 'https://us-central1-globalnl-database-test.cloudfunctions.net/token';
     //var tokenFunctionURL = 'https://members.globalnl.com/token';
 	script.src = tokenFunctionURL +
         '?code=' + encodeURIComponent(code) +
